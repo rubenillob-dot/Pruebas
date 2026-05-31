@@ -45,6 +45,8 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 body {
@@ -422,6 +424,9 @@ body::after {
     height: 100vh;
     overflow: hidden;
     position: relative;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .show-panel-btn {
@@ -517,6 +522,10 @@ body::after {
     grid-template-columns: 1.2fr 1fr;
     gap: 16px;
     align-items: stretch;
+}
+
+.rules-card, .tiktok-card {
+    min-width: 240px;
 }
 
 .rules-card {
@@ -857,8 +866,6 @@ body::after {
     aspect-ratio: 16 / 9;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
     margin: 8px 0;
-    flex-grow: 1;
-    max-height: 260px;
 }
 
 .video-container video {
@@ -866,6 +873,8 @@ body::after {
     height: 100%;
     object-fit: cover;
     display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .video-caption {
