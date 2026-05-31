@@ -493,9 +493,10 @@ body::after {
 .viewer-grid {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
     grid-template-areas: 
         "key video"
+        "promo video"
         "rules-region video";
     gap: 16px;
     flex-grow: 1;
@@ -504,6 +505,10 @@ body::after {
 
 .key-card {
     grid-area: key;
+}
+
+.promo-banner-code {
+    grid-area: promo;
 }
 
 .left-bottom-wrapper {
@@ -1106,4 +1111,178 @@ body::after {
         bottom: 20px;
         left: 20px;
     }
+}
+
+/* ==========================================================================
+   GAMING DECORATIONS & PROMO BANNER (Arixu Code Shop)
+   ========================================================================== */
+
+/* Background decorations */
+.gaming-background-decorations {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.decor-controller-wrapper {
+    position: absolute;
+    top: -5%;
+    right: -5%;
+    width: 380px;
+    height: 380px;
+    opacity: 0.05;
+    color: var(--accent-cyan);
+    transform: rotate(-15deg);
+}
+
+.decor-controller {
+    width: 100%;
+    height: 100%;
+}
+
+/* Floating symbols */
+.float-action-btn {
+    position: absolute;
+    font-size: 1.4rem;
+    font-weight: bold;
+    opacity: 0.08;
+    user-select: none;
+    animation: floatGently 8s infinite ease-in-out;
+}
+
+.f-triangle {
+    top: 25%;
+    left: 32%;
+    color: var(--accent-cyan);
+    animation-delay: 0s;
+}
+
+.f-circle {
+    top: 60%;
+    left: 45%;
+    color: var(--accent-magenta);
+    animation-delay: 2s;
+}
+
+.f-cross {
+    top: 40%;
+    right: 28%;
+    color: var(--accent-cyan);
+    animation-delay: 4s;
+}
+
+.f-square {
+    top: 75%;
+    left: 10%;
+    color: var(--accent-magenta);
+    animation-delay: 6s;
+}
+
+@keyframes floatGently {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(15deg);
+    }
+}
+
+/* Header Fortnite Llama */
+.header-llama {
+    width: 36px;
+    height: 36px;
+    color: var(--accent-purple);
+    vertical-align: middle;
+    margin-right: 12px;
+    display: inline-block;
+    filter: drop-shadow(0 0 6px rgba(191, 34, 255, 0.35));
+    animation: LlamaFloat 4s infinite ease-in-out;
+}
+
+@keyframes LlamaFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-4px) rotate(-6deg); }
+}
+
+/* Promo Banner Shop Code */
+.promo-banner-code {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(135deg, #7c004f 0%, #bd00c4 50%, #ff5e00 100%);
+    border: 1.5px solid rgba(255, 107, 0, 0.25);
+    border-radius: var(--border-radius-md);
+    padding: 14px 24px;
+    box-shadow: 0 8px 24px rgba(255, 0, 94, 0.2), inset 0 0 12px rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.promo-banner-code:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(255, 0, 94, 0.35), 0 0 20px rgba(0, 240, 255, 0.2);
+    border-color: var(--accent-cyan);
+}
+
+.vbuck-container {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 6px var(--accent-cyan));
+    animation: spinVbuck 6s infinite linear;
+}
+
+.vbuck-icon {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes spinVbuck {
+    0% { transform: rotateY(0deg); }
+    50% { transform: rotateY(180deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+.promo-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.promo-subtitle {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    opacity: 0.95;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.promo-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.promo-code-highlight {
+    color: var(--accent-cyan);
+    background: rgba(12, 0, 31, 0.5);
+    padding: 2px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 240, 255, 0.45);
+    display: inline-block;
+    margin: 0 4px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-shadow: 0 0 6px rgba(0, 240, 255, 0.6);
 }

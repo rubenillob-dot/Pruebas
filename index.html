@@ -14,6 +14,29 @@
     <!-- Floating background decorative shapes -->
     <div id="particles-container" class="particles-container"></div>
 
+    <!-- Decorative background elements (Gaming Theme) -->
+    <div class="gaming-background-decorations">
+        <div class="decor-controller-wrapper">
+            <svg class="decor-controller" viewBox="0 0 512 512" fill="none" stroke="currentColor">
+                <path d="M160,112 C180,112 210,130 220,150 C225,160 230,170 235,180" stroke-width="12" stroke-linecap="round"/>
+                <path d="M352,112 C332,112 302,130 292,150 C287,160 282,170 277,180" stroke-width="12" stroke-linecap="round"/>
+                <path d="M120,120 C180,90 332,90 392,120 C420,134 460,170 470,220 C485,295 450,400 410,430 C380,452 350,440 320,380 C300,340 290,320 256,320 C222,320 212,340 192,380 C162,440 132,452 102,430 C62,400 27,295 42,220 C52,170 92,134 120,120 Z" stroke-width="14" stroke-linejoin="round"/>
+                <path d="M110,180 L130,180 M120,170 L120,190" stroke-width="10" stroke-linecap="round"/>
+                <circle cx="392" cy="180" r="14" stroke-width="8"/>
+                <path d="M386,226 L398,238 M398,226 L386,238" stroke-width="8" stroke-linecap="round"/>
+                <rect x="340" y="196" width="16" height="16" rx="2" stroke-width="8"/>
+                <polygon points="348,154 340,168 356,168" stroke-width="8"/>
+                <circle cx="190" cy="270" r="32" stroke-width="12"/>
+                <circle cx="322" cy="270" r="32" stroke-width="12"/>
+                <rect x="186" y="120" width="140" height="70" rx="10" stroke-width="10"/>
+            </svg>
+        </div>
+        <span class="float-action-btn f-triangle">▲</span>
+        <span class="float-action-btn f-circle">●</span>
+        <span class="float-action-btn f-cross">✖</span>
+        <span class="float-action-btn f-square">■</span>
+    </div>
+
     <div class="app-container" id="appContainer">
         <!-- STREAMER CONTROL PANEL (Left Side) -->
         <aside class="streamer-panel" id="streamerPanel">
@@ -89,7 +112,16 @@
 
             <header class="viewer-header">
                 <div class="badge">SOPORTE DE PRIVADAS</div>
-                <h1 class="main-title">INSTRUCCIONES PARA UNIRSE</h1>
+                <h1 class="main-title">
+                    <svg class="header-llama" viewBox="0 0 100 100">
+                        <path d="M20,65 L25,45 L35,40 L45,35 L48,20 L58,15 L62,25 L58,35 L62,45 L72,50 L75,70 L60,85 L50,85 L42,75 L30,75 L25,85 L15,75 Z" fill="currentColor"/>
+                        <rect x="42" y="50" width="16" height="16" rx="4" fill="var(--accent-cyan)"/>
+                        <circle cx="52" cy="25" r="3" fill="#000"/>
+                        <path d="M48,20 L44,10 L50,12" stroke="currentColor" stroke-width="3" fill="none"/>
+                        <path d="M52,18 L50,8 L56,10" stroke="currentColor" stroke-width="3" fill="none"/>
+                    </svg>
+                    INSTRUCCIONES PARA UNIRSE
+                </h1>
             </header>
 
             <div class="viewer-grid">
@@ -108,6 +140,21 @@
                         <span id="viewStatus">Esperando jugadores...</span>
                     </div>
                 </section>
+
+                <!-- PROMO BANNER: Código ARIXU -->
+                <div class="promo-banner-code">
+                    <div class="vbuck-container">
+                        <svg class="vbuck-icon" viewBox="0 0 100 100">
+                            <polygon points="50,5 90,28 90,72 50,95 10,72 10,28" fill="rgba(0, 240, 255, 0.15)" stroke="#00f0ff" stroke-width="5"/>
+                            <polygon points="50,15 80,32 80,68 50,85 20,68 20,32" fill="none" stroke="#00f0ff" stroke-width="3"/>
+                            <path d="M35,35 L45,70 L55,70 L65,35 L55,35 L50,55 L45,35 Z" fill="#00f0ff"/>
+                        </svg>
+                    </div>
+                    <div class="promo-text-content">
+                        <span class="promo-subtitle">🌟 APOYA AL CANAL 🌟</span>
+                        <h2 class="promo-title">Usa el Código: <span class="promo-code-highlight">ARIXU</span> en la tienda</h2>
+                    </div>
+                </div>
 
                 <!-- LEFT COLUMN - ROW 2: Rules & Region Wrapper -->
                 <div class="left-bottom-wrapper">
