@@ -318,8 +318,8 @@ body::after {
 
 .control-group select:focus,
 .control-group input:focus {
-    border-color: var(--accent-cyan);
-    box-shadow: 0 0 12px rgba(0, 240, 255, 0.35);
+    border-color: #00cbd6;
+    box-shadow: none;
     background-color: rgba(12, 0, 31, 0.85);
 }
 
@@ -343,7 +343,7 @@ body::after {
     left: 50%;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
+    background: #00cbd6;
     transition: var(--transition-smooth);
     transform: translateX(-50%);
 }
@@ -520,17 +520,79 @@ body::after {
     justify-content: center;
 }
 
-.region-card {
-    border: 1.5px solid var(--alert-color);
-    box-shadow: 0 8px 24px rgba(255, 0, 85, 0.12);
+/* Nested Region Area inside Rules Card */
+.nested-region-area {
+    margin-top: 18px;
+    border-top: 1px dashed rgba(191, 34, 255, 0.2);
+    padding-top: 14px;
+}
+
+.nested-region-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* TikTok Goals Card styling */
+.tiktok-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.region-card:hover {
-    border-color: #ff3366;
-    box-shadow: 0 12px 30px rgba(255, 0, 85, 0.22);
+.tiktok-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.tiktok-goals-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tiktok-goals-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(191, 34, 255, 0.06);
+    border: 1px solid rgba(191, 34, 255, 0.12);
+    padding: 8px 12px;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition-fast);
+}
+
+.tiktok-goals-list li:hover {
+    background: rgba(191, 34, 255, 0.12);
+    border-color: rgba(191, 34, 255, 0.3);
+    transform: translateX(3px);
+}
+
+.goal-number {
+    font-weight: 500;
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+.goal-arrow {
+    color: var(--accent-magenta);
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.goal-likes {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    color: #00d8e6; /* Matte cian */
+    font-size: 0.95rem;
 }
 
 /* Card General Styling */
@@ -612,25 +674,12 @@ body::after {
     font-size: 4.2rem;
     font-weight: 800;
     letter-spacing: 4px;
-    background: linear-gradient(135deg, #00f0ff 0%, #d600ff 50%, #ff007f 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.6)) drop-shadow(0 0 20px rgba(214, 0, 255, 0.4));
-    animation: keyPulse 3s infinite ease-in-out;
+    color: #00d8e6; /* Matte cian */
+    text-shadow: none;
+    filter: none;
     word-break: break-all;
     line-height: 1.1;
     user-select: all;
-}
-
-@keyframes keyPulse {
-    0%, 100% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.5)) drop-shadow(0 0 15px rgba(214, 0, 255, 0.3));
-    }
-    50% {
-        transform: scale(1.02);
-        filter: drop-shadow(0 0 12px rgba(0, 240, 255, 0.7)) drop-shadow(0 0 22px rgba(214, 0, 255, 0.5));
-    }
 }
 
 .lobby-status {
@@ -820,6 +869,24 @@ body::after {
     line-height: 1.4;
     text-align: center;
     margin-bottom: 12px;
+}
+
+/* Subscription Info Banner */
+.sub-info-banner {
+    background: rgba(191, 34, 255, 0.1);
+    border: 1.5px solid rgba(191, 34, 255, 0.25);
+    padding: 12px 16px;
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    font-size: 0.88rem;
+    margin: 12px 0 16px 0;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.sub-info-banner strong {
+    color: #00d8e6;
+    font-family: 'Fredoka', sans-serif;
 }
 
 /* Highlight glow effect on video card */
