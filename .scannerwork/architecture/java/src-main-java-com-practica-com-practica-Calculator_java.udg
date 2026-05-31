@@ -1,102 +1,0 @@
-
-1.0rubenillob-dot_sonar-practicaJavaFrontend"1779719499784*java2.BÀ
-<
-7src/main/java/com/practica/com/practica/Calculator.java2
-	
-type3
-	
-MAIN4
-
-package6
-
-com.practica7
-
-com.practica.Calculator9
-
-class10
-
-access11
-
-public12
-
-
-full-range13
-
-(2:1)-(23:2)14
-
-simple-name15
-
-
-Calculator16
-)
-#com.practica.Calculator#divide(II)I18
-
-method19
-
-(4:5)-(10:6)20
-
-divide21
-9
-3com.practica.Calculator#status(I)Ljava/lang/String;23
-
-(12:5)-(19:6)24
-
-status25J
-
-1
-12
-
-
-3
-4 Z
-
-5
-5768jç
-M
-22G
-222319 *
-1 (28:5B$
-
-
-11
-12
-
-
-13
-24
-
-
-15
-25
-M
-17G
-171819 *
-1 (28:5B$
-
-
-11
-12
-
-
-13
-20
-
-
-15
-21
-G
-8B
-8910 *
-1 (:5B$
-
-
-11
-12
-
-
-13
-14
-
-
-15
-16
