@@ -405,12 +405,32 @@ body::after {
     border-top: 1px solid rgba(191, 34, 255, 0.15);
     padding-top: 16px;
     margin-top: 24px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
-.panel-footer p {
-    font-size: 0.8rem;
-    color: var(--text-muted);
+.dev-credits-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    color: #a1a1aa;
+    text-decoration: none;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.dev-credits-link svg {
+    transition: transform var(--transition-fast);
+}
+
+.dev-credits-link:hover {
+    color: var(--accent-cyan);
+    transform: scale(1.02);
+}
+
+.dev-credits-link:hover svg {
+    transform: rotate(10deg);
 }
 
 /* ==========================================================================
@@ -1294,4 +1314,28 @@ body::after {
     font-weight: 900;
     letter-spacing: 1px;
     text-shadow: 0 0 6px rgba(0, 240, 255, 0.6);
+}
+
+/* Sidebar Emote styling */
+.emote-container-sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.emote-sidebar {
+    width: 170px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 2px solid var(--accent-purple);
+    box-shadow: 0 8px 20px rgba(191, 34, 255, 0.25);
+    transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.emote-sidebar:hover {
+    transform: scale(1.05) rotate(2deg);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 12px 25px rgba(0, 240, 255, 0.35);
 }
