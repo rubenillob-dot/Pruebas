@@ -1,312 +1,491 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soporte para Privadas - ImArixu</title>
-    <!-- Google Fonts for Gaming Aesthetic (Poppins & Fredoka) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <!-- Floating background decorative shapes -->
-    <div id="particles-container" class="particles-container"></div>
+    <title>Operación Temazo 2 - Panel Completo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-    <!-- Decorative background elements (Gaming Theme) -->
-    <div class="gaming-background-decorations">
-        <div class="decor-controller-wrapper">
-            <svg class="decor-controller" viewBox="0 0 512 512" fill="none" stroke="currentColor">
-                <path d="M160,112 C180,112 210,130 220,150 C225,160 230,170 235,180" stroke-width="12" stroke-linecap="round"/>
-                <path d="M352,112 C332,112 302,130 292,150 C287,160 282,170 277,180" stroke-width="12" stroke-linecap="round"/>
-                <path d="M120,120 C180,90 332,90 392,120 C420,134 460,170 470,220 C485,295 450,400 410,430 C380,452 350,440 320,380 C300,340 290,320 256,320 C222,320 212,340 192,380 C162,440 132,452 102,430 C62,400 27,295 42,220 C52,170 92,134 120,120 Z" stroke-width="14" stroke-linejoin="round"/>
-                <path d="M110,180 L130,180 M120,170 L120,190" stroke-width="10" stroke-linecap="round"/>
-                <circle cx="392" cy="180" r="14" stroke-width="8"/>
-                <path d="M386,226 L398,238 M398,226 L386,238" stroke-width="8" stroke-linecap="round"/>
-                <rect x="340" y="196" width="16" height="16" rx="2" stroke-width="8"/>
-                <polygon points="348,154 340,168 356,168" stroke-width="8"/>
-                <circle cx="190" cy="270" r="32" stroke-width="12"/>
-                <circle cx="322" cy="270" r="32" stroke-width="12"/>
-                <rect x="186" y="120" width="140" height="70" rx="10" stroke-width="10"/>
-            </svg>
-        </div>
-        <span class="float-action-btn f-triangle">▲</span>
-        <span class="float-action-btn f-circle">●</span>
-        <span class="float-action-btn f-cross">✖</span>
-        <span class="float-action-btn f-square">■</span>
+</head>
+
+<body>
+    <!-- Contenedor decorativo flotante de música -->
+    <div class="music-floating-bg">
+        <div class="music-icon icon-1">🎵</div>
+        <div class="music-icon icon-2">🎶</div>
+        <div class="music-icon icon-3">🎧</div>
+        <div class="music-icon icon-4">🎤</div>
+        <div class="music-icon icon-5">🎵</div>
+        <div class="music-icon icon-6">🎶</div>
+        <div class="music-icon icon-7">🎧</div>
+        <div class="music-icon icon-8">🎤</div>
+        <div class="music-icon icon-9">🎵</div>
+        <div class="music-icon icon-10">🎶</div>
     </div>
 
-    <div class="app-container" id="appContainer">
-        <!-- STREAMER CONTROL PANEL (Left Side) -->
-        <aside class="streamer-panel" id="streamerPanel">
-            <div class="panel-header">
-                <div class="logo-area">
-                    <span class="logo-dot"></span>
-                    <h2>Arixu Control</h2>
+    <header>
+        <div class="ari-header-badge">
+            <i class="fa-brands fa-twitch"></i> OPERACIÓN TEMAZO - EDICIÓN ARIXU <i class="fa-solid fa-music"></i>
+        </div>
+        <h1 class="main-title">Operación Temazo 2</h1>
+    </header>
+
+    <audio id="sonidoRevelar" src="efectos/audiorevelacion.mp3"></audio>
+    <audio id="sonidoTambores" src="efectos/redobletambor.mp3"></audio>
+
+    <section class="hall-of-fame">
+        <h2 class="hall-title"><i class="fa-solid fa-crown"></i> SALÓN DE LA FAMA - EDICIÓN 1 <i
+                class="fa-solid fa-crown"></i></h2>
+
+        <div class="podium-container">
+            <div class="podium-card rank-2">
+                <div class="podium-badge">2º</div>
+                <div class="podium-content">
+                    <img src="imagen/Arixu en la casa.png" class="podium-img" alt="Plata">
+                    <div class="podium-info">
+                        <h3>Arixu en la casa</h3>
+                        <p>Neeusgoomiiis</p>
+
+                        <audio id="audioPodiumPlata" src="musica/Arixu en la casa.mp3" preload="none"></audio>
+                        <div class="podium-actions">
+                            <button class="podium-btn btn-listen btn-silver"
+                                onclick="togglePodiumAudio('audioPodiumPlata', this)">
+                                <i class="fa-solid fa-play"></i> Escuchar
+                            </button>
+                            
+                        </div>
+                    </div>
                 </div>
-                <button class="toggle-btn-inner" id="hidePanelBtnInner" title="Ocultar Panel (Modo Espectador Completo)">
-                    <svg viewBox="0 0 24 24" width="20" height="20">
-                        <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
-                    </svg>
-                </button>
+            </div>
+
+            <div class="podium-card rank-1">
+                <div class="podium-badge">1º</div>
+                <div class="podium-content">
+                    <img src="imagen/La vida del stream.png" class="podium-img" alt="Oro">
+                    <div class="podium-info">
+                        <h3>La vida del stream</h3>
+                        <p>Rurru_Arxu</p>
+
+                        <audio id="audioPodiumOro" src="musica/La vida del stream.mp3" preload="none"></audio>
+                        <div class="podium-actions">
+                            <button class="podium-btn btn-listen btn-gold"
+                                onclick="togglePodiumAudio('audioPodiumOro', this)">
+                                <i class="fa-solid fa-play"></i> Escuchar
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="podium-card rank-3">
+                <div class="podium-badge">3º</div>
+                <div class="podium-content">
+                    <img src="imagen/Ticket dorado.png" class="podium-img" alt="Bronce">
+                    <div class="podium-info">
+                        <h3>Ticket dorado</h3>
+                        <p>aandreiiiitaaaa</p>
+
+                        <audio id="audioPodiumBronce" src="musica/Ticket dorado.mp3" preload="none"></audio>
+                        <div class="podium-actions">
+                            <button class="podium-btn btn-listen btn-bronze"
+                                onclick="togglePodiumAudio('audioPodiumBronce', this)">
+                                <i class="fa-solid fa-play"></i> Escuchar
+                            </button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="intro-section">
+        <div class="top-controls">
+            <div class="volume-slider-container">
+                <span>Efectos sonido</span>
+                <i class="fa-solid fa-volume-high"></i>
+                <input type="range" min="0" max="100" value="50" class="volume-slider">
+            </div>
+        </div>
+
+        <div class="rules-container">
+            <h2 class="orange-title">PRIMERA FASE</h2>
+            <ul class="custom-list">
+                <li><i class="fa-solid fa-microphone-lines icon-bullet"></i><span>En esta fase se escucharán y valorarán
+                        <strong>todas las canciones</strong> que participan en Operación Temazo 2</span></li>
+                <li>
+                    <i class="fa-solid fa-microphone-lines icon-bullet"></i>
+                    <span>Cada canción será puntuada de <strong>0 a 10</strong> por el jurado y el chat, siendo su puntuación
+                        total:
+                        <br><br>
+                        <span class="indent-text"><strong>25% Chat de Twitch y 75% Ari</strong></span>
+                        <br>
+                        <span class="indent-text" style="font-size: 0.9rem; color: #ff6a33; font-style: italic;">* Nota: El chat de Twitch puede puntuar utilizando números con decimales (ej. 8.5 o 9,2).</span>
+                    </span>
+                </li>
+                <li><i class="fa-solid fa-microphone-lines icon-bullet"></i><span>Cada miembro del jurado tiene
+                        <strong>un pase de oro <i class="fa-solid fa-ticket"></i></strong>, (el chat tambien se tendra
+                        que poner de acuerdo para dar un tickect dorado)que usará para pasar
+                        directamente una canción a la <strong>fase final</strong></span></li>
+                <li><i class="fa-solid fa-microphone-lines icon-bullet"></i><span>Al terminar esta primera fase, las
+                        <strong>5 canciones mejor puntuadas</strong> y las <strong>3 canciones que tengan el pase de oro
+                            <i class="fa-solid fa-ticket"></i></strong> pasarán a la <strong>fase final</strong></span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="credits-container">
+            <h2 class="orange-title">ESTO NO SERÍA POSIBLE SIN:</h2>
+            <div class="credit-grid">
+                <div class="credit-card card-revision">
+                    <div class="credit-card-header">
+                        <div class="credit-icon" style="background-color: #6a1b9a;"><i class="fa-solid fa-magnifying-glass"></i></div>
+                        <span class="credit-role">Revisión general</span>
+                    </div>
+                    <div class="credit-names">Noopo, Neus, Ruben</div>
+                </div>
+                <div class="credit-card card-seleccion">
+                    <div class="credit-card-header">
+                        <div class="credit-icon" style="background-color: #8e24aa;"><i class="fa-solid fa-filter"></i></div>
+                        <span class="credit-role">Selección final</span>
+                    </div>
+                    <div class="credit-names">Noopo, Neus, Ruben</div>
+                    <div class="credit-subtext">💡 "Se recomienda escuchar las canciones sin mirar la letra"</div>
+                </div>
+                <div class="credit-card card-diseno">
+                    <div class="credit-card-header">
+                        <div class="credit-icon" style="background-color: #00acc1;"><i class="fa-solid fa-pen-nib"></i></div>
+                        <span class="credit-role">Diseño</span>
+                    </div>
+                    <div class="credit-names">
+                        <a href="https://www.instagram.com/rubencillo.04?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram-credit-link">
+                            <i class="fa-brands fa-instagram"></i>@rubencillo.04
+                        </a>
+                    </div>
+                </div>
+                <div class="credit-card card-animaciones">
+                    <div class="credit-card-header">
+                        <div class="credit-icon" style="background-color: #0288d1;"><i class="fa-solid fa-film"></i></div>
+                        <span class="credit-role">Animaciones</span>
+                    </div>
+                    <div class="credit-names">
+                        <a href="https://www.instagram.com/rubencillo.04?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="instagram-credit-link">
+                            <i class="fa-brands fa-instagram"></i>@rubencillo.04
+                        </a>
+                    </div>
+                </div>
+                <div class="credit-card card-jurado">
+                    <div class="credit-card-header">
+                        <div class="credit-icon" style="background-color: #d81b60;"><i class="fa-solid fa-gavel"></i></div>
+                        <span class="credit-role">Jurado</span>
+                    </div>
+                    <div class="credit-names">Ari y el chat de Twitch</div>
+                </div>
+                <div class="credit-card card-desarrollo">
+                    <div class="credit-card-header">
+                        <div class="credit-icon" style="background-color: #fbc02d; color: #000;"><i class="fa-solid fa-code"></i></div>
+                        <span class="credit-role">Desarrollo</span>
+                    </div>
+                    <div class="credit-names">Ruben</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="text-transition">EMPECEMOS</p>
+
+    <!-- Sección de Instrucciones de Votación y Panel -->
+    <div class="instructions-container">
+        <div class="instructions-header">
+            <i class="fa-solid fa-circle-info instructions-icon"></i>
+            <h3>Instrucciones de Votación y Panel</h3>
+        </div>
+        <div class="instructions-grid">
+            <div class="instruction-item">
+                <div class="inst-icon-wrapper jurado-color"><i class="fa-solid fa-user-tie"></i></div>
+                <div class="instruction-text">
+                    <h4>Puntuaciones del Jurado</h4>
+                    <p>Cada miembro del jurado dispone de botones específicos para registrar sus calificaciones (de 0 a 10) de forma independiente para cada canción.</p>
+                </div>
+            </div>
+            <div class="instruction-item">
+                <div class="inst-icon-wrapper chat-color"><i class="fa-brands fa-twitch"></i></div>
+                <div class="instruction-text">
+                    <h4>¡Nueva Función! Votos del Chat</h4>
+                    <p>El chat también participa puntuando del <strong>0 al 10</strong>. Recuerda que solo se contabilizan las votaciones enviadas a través del chat de <strong>Twitch</strong>. Si nos ves desde <strong>YouTube</strong> o <strong>TikTok</strong>, ¡te invitamos a unirte a Twitch para participar!</p>
+                </div>
+            </div>
+            <div class="instruction-item">
+                <div class="inst-icon-wrapper letra-color"><i class="fa-solid fa-file-lines"></i></div>
+                <div class="instruction-text">
+                    <h4>Letras de las Canciones</h4>
+                    <p>Tienes a tu disposición un botón para revelar la letra de cada tema. Si prefieres no ver spoilers y disfrutar del factor sorpresa, ¡puedes dejarla oculta!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-canciones">
+    </div>
+
+    <div class="fase-final-section">
+        <h2 class="gradient-title">FASE FINAL</h2>
+
+        <ul class="custom-list">
+            <li>
+                <i class="fa-solid fa-microphone icon-bullet"></i>
+                <span>En esta fase las <strong>5 canciones mejor puntuadas</strong> y las <strong>3 canciones que tengan
+                        el pase de oro <i class="fa-solid fa-ticket" style="color: #fbc02d;"></i></strong> se
+                    enfrentarán en una eliminatoria</span>
+            </li>
+            <li>
+                <i class="fa-solid fa-microphone icon-bullet"></i>
+                <span>En cada enfrentamiento, el <strong>jurado junto al chat decidirá la canción ganadora mediante
+                        encuestas de A o B</strong>, la cual avanzará al siguiente enfrentamiento</span>
+            </li>
+        </ul>
+
+        <div class="btn-container">
+            <button class="btn-outline-blue" onclick="empezarFaseFinal()">EMPEZAR FASE FINAL</button>
+        </div>
+    </div>
+
+    <div id="bracket-section" class="bracket-wrapper" style="display: none;">
+        <div class="bracket-col quarters">
+            <div class="match-group">
+                <div class="bracket-box empty bracket-slot-1" id="caja1"><i class="fa-solid fa-music"></i></div><button class="btn-vs"
+                    onclick="abrirBatalla('caja1', 'caja2', 'semi1')"><i class="fa-solid fa-khanda"></i></button>
+                <div class="bracket-box empty bracket-slot-2" id="caja2"><i class="fa-solid fa-music"></i></div>
+            </div>
+            <div class="match-group">
+                <div class="bracket-box empty bracket-slot-3" id="caja3"><i class="fa-solid fa-music"></i></div><button class="btn-vs"
+                    onclick="abrirBatalla('caja3', 'caja4', 'semi2')"><i class="fa-solid fa-khanda"></i></button>
+                <div class="bracket-box empty bracket-slot-4" id="caja4"><i class="fa-solid fa-music"></i></div>
+            </div>
+        </div>
+
+        <div class="bracket-col semis">
+            <div class="match-group">
+                <div class="bracket-box unknown" id="semi1"><i class="fa-solid fa-question"></i></div><button
+                    class="btn-vs" onclick="abrirBatalla('semi1', 'semi2', 'final1')"><i
+                        class="fa-solid fa-khanda"></i></button>
+                <div class="bracket-box unknown" id="semi2"><i class="fa-solid fa-question"></i></div>
+            </div>
+        </div>
+
+        <div class="bracket-col final-col">
+            <div class="bracket-box winner-box" id="campeon"><i class="fa-solid fa-trophy"></i></div>
+            <div class="final-match">
+                <div class="bracket-box unknown" id="final1"><i class="fa-solid fa-question"></i></div><button
+                    class="btn-vs btn-vs-final" onclick="abrirBatalla('final1', 'final2', 'campeon')"><i
+                        class="fa-solid fa-khanda"></i></button>
+                <div class="bracket-box unknown" id="final2"><i class="fa-solid fa-question"></i></div>
+            </div>
+        </div>
+
+        <div class="bracket-col semis">
+            <div class="match-group">
+                <div class="bracket-box unknown" id="semi3"><i class="fa-solid fa-question"></i></div><button
+                    class="btn-vs" onclick="abrirBatalla('semi3', 'semi4', 'final2')"><i
+                        class="fa-solid fa-khanda"></i></button>
+                <div class="bracket-box unknown" id="semi4"><i class="fa-solid fa-question"></i></div>
+            </div>
+        </div>
+
+        <div class="bracket-col quarters">
+            <div class="match-group">
+                <div class="bracket-box empty bracket-slot-5" id="caja5"><i class="fa-solid fa-music"></i></div><button class="btn-vs"
+                    onclick="abrirBatalla('caja5', 'caja6', 'semi3')"><i class="fa-solid fa-khanda"></i></button>
+                <div class="bracket-box empty bracket-slot-6" id="caja6"><i class="fa-solid fa-music"></i></div>
+            </div>
+            <div class="match-group">
+                <div class="bracket-box empty bracket-slot-7" id="caja7"><i class="fa-solid fa-music"></i></div><button class="btn-vs"
+                    onclick="abrirBatalla('caja7', 'caja8', 'semi4')"><i class="fa-solid fa-khanda"></i></button>
+                <div class="bracket-box empty bracket-slot-8" id="caja8"><i class="fa-solid fa-music"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="batallaModal" class="modal-overlay">
+        <div class="modal-content modal-batalla-bg">
+            <button class="close-modal" onclick="cerrarBatalla()"><i class="fa-solid fa-xmark"></i></button>
+
+            <div class="batalla-layout">
+                <div class="contendiente" id="contendienteA">
+                    <img src="" class="batalla-img" id="imgA">
+                    <h3 class="batalla-title" id="tituloA">Canción A</h3>
+
+                    <div class="player-ui" style="width: 100%; margin-bottom: 15px;">
+                        <audio id="audioBatallaA" src=""></audio>
+                        <button class="play-btn" onclick="reproducirBatalla('A')"><i class="fa-solid fa-play"
+                                id="playIconBatallaA"></i></button>
+                        <div class="timeline" id="timelineBatallaA" style="cursor: pointer;">
+                            <div class="timeline-progress" id="progressBatallaA" style="width: 0%;"></div>
+                        </div>
+                        <span class="time-text" id="timeBatallaA"
+                            style="font-size: 0.75rem; color: var(--text-muted);">0:00 / 0:00</span>
+                    </div>
+
+                    <button class="btn-vencedor" id="btnGanadorA">VENCEDOR</button>
+                </div>
+
+                <div class="batalla-centro">
+                    <i class="fa-solid fa-khanda icono-espadas"></i>
+
+                    <div class="twitch-tooltip">
+                        <p><strong>A</strong> para votar <strong id="nombreVotaA">Canción A</strong></p>
+                        <p><strong>B</strong> para votar <strong id="nombreVotaB">Canción B</strong></p>
+                        <i class="fa-brands fa-twitch" style="margin-top: 10px; font-size: 1.2rem; color: #b785ff;"></i>
+                    </div>
+                </div>
+
+                <div class="contendiente" id="contendienteB">
+                    <img src="" class="batalla-img" id="imgB">
+                    <h3 class="batalla-title" id="tituloB">Canción B</h3>
+
+                    <div class="player-ui" style="width: 100%; margin-bottom: 15px;">
+                        <audio id="audioBatallaB" src=""></audio>
+                        <button class="play-btn" onclick="reproducirBatalla('B')"><i class="fa-solid fa-play"
+                                id="playIconBatallaB"></i></button>
+                        <div class="timeline" id="timelineBatallaB" style="cursor: pointer;">
+                            <div class="timeline-progress" id="progressBatallaB" style="width: 0%;"></div>
+                        </div>
+                        <span class="time-text" id="timeBatallaB"
+                            style="font-size: 0.75rem; color: var(--text-muted);">0:00 / 0:00</span>
+                    </div>
+
+                    <button class="btn-vencedor" id="btnGanadorB">VENCEDOR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="lyricsModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-modal" onclick="cerrarLetra()"><i class="fa-solid fa-xmark"></i></button>
+            <h2 id="modalTitle" class="modal-title">Título de la Canción</h2>
+            <div id="modalLyrics" class="modal-lyrics">Aquí irá la letra...</div>
+        </div>
+    </div>
+
+    <!-- Modal de Puntuación de Jueces -->
+    <div id="scoringModal" class="modal-overlay">
+        <div class="modal-content scoring-modal-content horizontal">
+            <button class="close-modal" onclick="cerrarScoringModal()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="scoring-modal-left">
+                <img src="" id="scoringModalJudgeEmote" class="scoring-modal-judge-emote" alt="Juez">
+                <div class="scoring-modal-info">
+                    <h3 id="scoringModalTitle">Puntuación de Juez</h3>
+                    <p id="scoringModalSongTitle" class="scoring-modal-song-title">Nombre de la canción</p>
+                </div>
             </div>
             
-            <div class="panel-content">
-                <div class="control-group">
-                    <label for="gameModeSelect">Modo de Juego</label>
-                    <select id="gameModeSelect">
-                        <option value="Recarga Cero Construcción">Recarga Cero Construcción</option>
-                        <option value="Recarga Construcción">Recarga Construcción</option>
-                        <option value="Battle Royale Cero Construcción">BR Cero Construcción</option>
-                        <option value="Battle Royale Construcción">BR Construcción</option>
-                        <option value="Blitz Royale">Blitz Royale</option>
-                        <option value="Tríos Cero Construcción">Tríos Cero Construcción</option>
-                        <option value="Escuadrones Cero Construcción">Escuadrones CC</option>
-                        <option value="Personalizado">Modo Personalizado...</option>
-                    </select>
-                </div>
-
-                <div class="control-group" id="customModeGroup" style="display: none;">
-                    <label for="customModeInput">Especificar Modo de Juego</label>
-                    <input type="text" id="customModeInput" placeholder="Ej: Creativo 2.0, Zone Wars...">
-                </div>
-
-                <div class="control-group">
-                    <label for="matchKeyInput">Clave de Partida</label>
-                    <div class="input-wrapper">
-                        <input type="text" id="matchKeyInput" placeholder="EJ: ARIXU10" maxlength="15">
-                        <span class="input-glow-line"></span>
+            <div class="scoring-modal-right">
+                <div class="slider-container-horizontal">
+                    <div class="slider-limits">
+                        <span>0</span>
+                        <input type="range" min="0" max="10" step="0.1" value="5" class="modal-range-slider" id="scoringModalSlider" oninput="actualizarSliderModal(this.value)">
+                        <span>10</span>
                     </div>
                 </div>
-
-                <div class="control-group">
-                    <label for="statusSelect">Estado de la Sala</label>
-                    <select id="statusSelect">
-                        <option value="Esperando jugadores...">Esperando jugadores...</option>
-                        <option value="¡ÚLTIMOS HUECOS! ¡DALE A LISTO!">¡ÚLTIMOS HUECOS! ¡DALE A LISTO!</option>
-                        <option value="Partida Iniciada">Partida Iniciada</option>
-                        <option value="En Preparación...">En Preparación...</option>
-                    </select>
+                
+                <div class="score-display-wrapper-horizontal">
+                    <div class="score-value-display" id="scoringModalValue">5.0</div>
+                    <button class="btn-confirm-score-horizontal" onclick="guardarScoreModal()">Guardar Puntuación</button>
                 </div>
-
-                <button class="action-btn" id="updateBtn">
-                    <span>ACTUALIZAR VISTA</span>
-                    <div class="btn-glow"></div>
-                </button>
-            </div>
-
-            <!-- Emote de Ari -->
-            <div class="emote-container-sidebar">
-                <img src="imagen/EmoteAri.png" alt="Emote Ari" class="emote-sidebar">
-            </div>
-
-            <div class="panel-footer">
-                <a href="https://www.instagram.com/rubencillo.04?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="dev-credits-link">
-                    <svg class="instagram-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
-                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                    </svg>
-                    <span>Web creada por @rubencillo.04</span>
-                </a>
-            </div>
-        </aside>
-
-        <!-- VIEWER VIEW (Right Side / Fullscreen) -->
-        <main class="viewer-panel" id="viewerPanel">
-            <!-- Floating button to show the control panel back when hidden -->
-            <button class="show-panel-btn hidden" id="showPanelBtn" title="Mostrar Panel de Control">
-                <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                </svg>
-            </button>
-
-            <header class="viewer-header">
-                <div class="badge">SOPORTE DE PRIVADAS</div>
-                <h1 class="main-title">
-                    <svg class="header-llama" viewBox="0 0 100 100">
-                        <path d="M20,65 L25,45 L35,40 L45,35 L48,20 L58,15 L62,25 L58,35 L62,45 L72,50 L75,70 L60,85 L50,85 L42,75 L30,75 L25,85 L15,75 Z" fill="currentColor"/>
-                        <rect x="42" y="50" width="16" height="16" rx="4" fill="var(--accent-cyan)"/>
-                        <circle cx="52" cy="25" r="3" fill="#000"/>
-                        <path d="M48,20 L44,10 L50,12" stroke="currentColor" stroke-width="3" fill="none"/>
-                        <path d="M52,18 L50,8 L56,10" stroke="currentColor" stroke-width="3" fill="none"/>
-                    </svg>
-                    INSTRUCCIONES PARA UNIRSE
-                </h1>
-            </header>
-
-            <div class="viewer-grid">
-                <!-- LEFT COLUMN - ROW 1: Key Card -->
-                <section class="key-card card">
-                    <div class="card-glow"></div>
-                    <div class="mode-badge" id="viewGameMode">Recarga Cero Construcción</div>
-                    <h2 class="section-subtitle">CLAVE DE PARTIDA</h2>
-                    
-                    <div class="key-display-container">
-                        <div class="key-display" id="viewMatchKey">ARIXU</div>
-                    </div>
-                    
-                    <div class="lobby-status">
-                        <span class="status-indicator-dot blink"></span>
-                        <span id="viewStatus">Esperando jugadores...</span>
-                    </div>
-                </section>
-
-                <!-- PROMO BANNER: Código ARIXU -->
-                <div class="promo-banner-code">
-                    <div class="vbuck-container">
-                        <svg class="vbuck-icon" viewBox="0 0 100 100">
-                            <polygon points="50,5 90,28 90,72 50,95 10,72 10,28" fill="rgba(0, 240, 255, 0.15)" stroke="#00f0ff" stroke-width="5"/>
-                            <polygon points="50,15 80,32 80,68 50,85 20,68 20,32" fill="none" stroke="#00f0ff" stroke-width="3"/>
-                            <path d="M35,35 L45,70 L55,70 L65,35 L55,35 L50,55 L45,35 Z" fill="#00f0ff"/>
-                        </svg>
-                    </div>
-                    <div class="promo-text-content">
-                        <span class="promo-subtitle">🌟 APOYA AL CANAL 🌟</span>
-                        <h2 class="promo-title">Usa el Código: <span class="promo-code-highlight">ARIXU</span> en la tienda</h2>
-                    </div>
-                </div>
-
-                <!-- LEFT COLUMN - ROW 2: Rules & Region Wrapper -->
-                <div class="left-bottom-wrapper">
-                    <!-- Rules & Guidelines (with Region Config nested) -->
-                    <section class="rules-card card">
-                        <h2 class="section-title">
-                            <svg viewBox="0 0 24 24" width="20" height="20" class="title-icon">
-                                <path fill="currentColor" d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A1.5,1.5 0 0,1 13.5,7.5A1.5,1.5 0 0,1 12,9A1.5,1.5 0 0,1 10.5,7.5A1.5,1.5 0 0,1 12,6M11,10H13V18H11V10Z" />
-                            </svg>
-                            NORMAS
-                        </h2>
-                        
-                        <ul class="rules-list">
-                            <li>
-                                <div class="rule-icon no-sniping">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12C20,14.82 18.54,17.29 16.36,18.72L5.28,7.64C6.71,5.46 9.18,4 12,4M4,12C4,9.18 5.46,6.71 7.64,5.28L18.72,16.36C17.29,18.54 14.82,20 12,20A8,8 0 0,1 4,12Z" />
-                                    </svg>
-                                </div>
-                                <div class="rule-text">
-                                    <strong>No Sniping</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="rule-icon no-toxic">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M20,2H4C2.9,2 2,2.9 2,4V22L6,18H20C21.1,18 22,17.1 22,16V4C22,2.9 21.1,2 20,2M18,14H6V12H18V14M18,10H6V8H18V10Z" />
-                                    </svg>
-                                </div>
-                                <div class="rule-text">
-                                    <strong>No Tóxicos</strong>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="rule-icon have-fun">
-                                    <svg viewBox="0 0 24 24" width="18" height="18">
-                                        <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,11A1.5,1.5 0 1,0 13.5,12.5A1.5,1.5 0 0,0 12,11M16.5,7.5A1.5,1.5 0 1,0 18,9A1.5,1.5 0 0,0 16.5,7.5M7.5,7.5A1.5,1.5 0 1,0 9,9A1.5,1.5 0 0,0 7.5,7.5Z" />
-                                    </svg>
-                                </div>
-                                <div class="rule-text">
-                                    <strong>¡Pásalo bien!</strong>
-                                </div>
-                            </li>
-                        </ul>
-
-                        <!-- Restructured Region Info -->
-                        <div class="nested-region-area">
-                            <h3 class="nested-region-title alert-title">
-                                <svg viewBox="0 0 24 24" width="16" height="16" class="title-icon warning-pulse">
-                                    <path fill="currentColor" d="M12,2L1,21H23L12,2M12,6L19.53,19H4.47L12,6M11,10V14H13V10H11M11,16V18H13V16H11Z" />
-                                </svg>
-                                CONFIG. OBLIGATORIA
-                            </h3>
-                            <div class="region-info">
-                                <svg viewBox="0 0 24 24" width="22" height="22" class="region-globe">
-                                    <path fill="currentColor" d="M17.9,17.39C17.64,16.59 16.89,16 16,16H15V13A1,1 0 0,0 14,12H8V10H10A1,1 0 0,0 11,9V7H13A2,2 0 0,0 15,5V4.59C17.93,5.77 20,8.64 20,12C20,14.08 19.2,15.97 17.9,17.39M11,19.93C7.07,19.47 4,16.09 4,12C4,10.23 4.62,8.61 5.67,7.31L9,10.64V12A2,2 0 0,0 11,14V16.25C10.5,16.58 10.13,17.07 10.05,17.66L9,18.7V19.43C9.64,19.78 10.3,19.9 11,19.93M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z" />
-                                </svg>
-                                <span class="region-text">REGIÓN: EUROPA <span class="region-subtext">(4ª opción en ajustes)</span></span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- METAS DE LIKES EN TIKTOK 💖 -->
-                    <section class="tiktok-card card">
-                        <div class="card-glow"></div>
-                        <h2 class="section-title">
-                            <svg viewBox="0 0 24 24" width="20" height="20" class="title-icon">
-                                <path fill="currentColor" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
-                            </svg>
-                            METAS DE LIKES EN TIKTOK 💖
-                        </h2>
-                        <p class="tiktok-subtitle">¡Ayúdanos a llegar a las metas para desbloquear más partidas!</p>
-                        <ul class="tiktok-goals-list">
-                            <li>
-                                <span class="goal-number">1ª Partida</span>
-                                <span class="goal-arrow">➔</span>
-                                <span class="goal-likes">20k LIKES</span>
-                            </li>
-                            <li>
-                                <span class="goal-number">2ª Partida</span>
-                                <span class="goal-arrow">➔</span>
-                                <span class="goal-likes">40k LIKES</span>
-                            </li>
-                            <li>
-                                <span class="goal-number">3ª Partida</span>
-                                <span class="goal-arrow">➔</span>
-                                <span class="goal-likes">60k LIKES</span>
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-
-                <!-- RIGHT COLUMN - ROWS 1 & 2: Video Card (Join Guide) -->
-                <section class="video-card card" id="videoCard">
-                    <div class="card-glow"></div>
-                    <h2 class="section-title">
-                        <svg viewBox="0 0 24 24" width="22" height="22" class="title-icon">
-                            <path fill="currentColor" d="M17,10.5V7A1,1 0 0,0 16,6H4A1,1 0 0,0 3,7V17A1,1 0 0,0 4,18H16A1,1 0 0,0 17,17V13.5L21,17.5V6.5L17,10.5Z" />
-                        </svg>
-                        GUÍA DE UNIÓN
-                    </h2>
-                    <div class="video-container">
-                        <video id="tutorialVideo" controls autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&auto=format&fit=crop&q=60">
-                            <source src="Video/Clave%20personalizada.mp4" type="video/mp4">
-                            Tu navegador no soporta el elemento de vídeo.
-                        </video>
-                    </div>
-                    <p class="video-caption">Sigue los pasos en pantalla para configurar tu clave de partida personalizada.</p>
-                    
-                    <!-- Aviso de Suscripción -->
-                    <div class="sub-info-banner">
-                        <strong>INFO IMPORTANTE:</strong> ¡Todos pueden unirse! Da igual si eres suscriptor o no, las partidas privadas son para todos.
-                    </div>
-
-                    <!-- TAB Help Button at the bottom of Right Column -->
-                    <button class="trouble-btn-tab" id="troubleBtn">
-                        <span class="warning-icon">⚠</span> ¿No te deja entrar? Pulsa aquí
-                    </button>
-                </section>
-            </div>
-        </main>
-    </div>
-
-    <!-- Troubleshooting Modal Overlay -->
-    <div class="trouble-modal-overlay hidden" id="troubleModalOverlay">
-        <div class="trouble-card-modal">
-            <div class="trouble-card-header">
-                <h3>Solución Rápida a Problemas de Entrada</h3>
-                <button class="close-trouble-btn" id="closeTroubleBtn">&times;</button>
-            </div>
-            <div class="trouble-card-body">
-                <ol class="trouble-steps">
-                    <li><span class="step-num">1</span> Sal de tu grupo actual o ponte como "No Listo".</li>
-                    <li><span class="step-num">2</span> Cambia el modo de juego a otra opción distinta (ej. Creativo o en solitario) y regresa al modo correcto.</li>
-                    <li><span class="step-num">3</span> Borra completamente la clave de partida actual del campo de texto.</li>
-                    <li><span class="step-num">4</span> Vuelve a escribir la clave exacta: <strong class="trouble-key" id="troubleKeyText">ARIXU</strong>.</li>
-                    <li><span class="step-num">5</span> Pulsa **Listo** y espera a que empiece la partida.</li>
-                </ol>
             </div>
         </div>
     </div>
-    
-    <script src="app.js"></script>
+
+    <div id="winnerModal" class="modal-overlay winner-bg">
+        <div class="modal-content winner-content-box">
+            <button class="close-modal" onclick="cerrarGanador()"><i class="fa-solid fa-xmark"></i></button>
+
+            <div class="winner-logo-simulated">
+                ✨ OPERACIÓN TEMAZO 2 🎤
+            </div>
+
+            <h2 class="winner-header">
+                <i class="fa-solid fa-trophy winner-trophy"></i>
+                GANADOR
+                <i class="fa-solid fa-trophy winner-trophy"></i>
+            </h2>
+
+            <div class="winner-card">
+                <img src="" id="winnerImg" class="winner-img">
+                <div class="winner-info">
+                    <div class="winner-author"><i class="fa-solid fa-user"></i> <span id="winnerAuthor">Autor</span>
+                    </div>
+                    <div class="winner-title-text" id="winnerTitle">Título de la canción</div>
+
+                    <audio id="winnerAudio" controls class="winner-audio"></audio>
+                </div>
+            </div>
+
+            <p class="winner-footer">GRACIAS A TODOS POR PARTICIPAR</p>
+        </div>
+    </div>
+
+
+    <!-- OVERLAY TEMPORIZADOR DE VOTACIÓN EN TWITCH -->
+    <div id="voteTimerOverlay" class="vote-timer-overlay">
+        <div class="vote-timer-content">
+            <button class="close-timer" onclick="cancelarVotacionChat()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="vote-timer-circle">
+                <svg width="120" height="120">
+                    <circle class="bg" cx="60" cy="60" r="50"></circle>
+                    <circle class="progress" cx="60" cy="60" r="50" id="timerProgressCircle"></circle>
+                </svg>
+                <div class="timer-text-countdown" id="timerCountdownNumber">30</div>
+            </div>
+
+            <h3 class="vote-timer-title">
+                VOTACIÓN DEL CHAT EN DIRECTO
+                <span id="voteSongTitle">Nombre de la Canción</span>
+            </h3>
+            
+            <p class="vote-timer-subtitle">
+                ¡El chat de Twitch tiene 30 segundos para enviar su puntuación! Escribe del 0 al 10 en el chat de @imarixu.
+            </p>        </div>
+
+        <!-- CAJA DEL ÚLTIMO VOTANTE (ESTILO ILLOJUAN) -->
+        <div id="currentVoterBox" class="current-voter-box">
+            <div class="current-voter-name" id="currentVoterName">Viewer: -</div>
+            <div class="current-voter-score" id="currentVoterScore">-</div>
+        </div>
+    </div>
+
+    <!-- FEED EN VIVO DE VOTOS (ESTILO ILLOJUAN) -->
+    <div id="liveVotosFeed" class="live-votos-feed">
+        <div class="feed-title">
+            <span>Chat en Vivo</span>
+            <span id="liveVotosCount">0 votos</span>
+        </div>
+        <div class="feed-list" id="feedList"></div>
+    </div>
+
+    <!-- Contenedor Flotante de Redes Sociales de Ari -->
+    <div class="social-float-bar">
+        <a href="https://www.twitch.tv/imarixu" target="_blank" class="social-bubble twitch" title="Twitch">
+            <i class="fa-brands fa-twitch"></i>
+        </a>
+        <a href="https://instagram.com/imarixu_" target="_blank" class="social-bubble instagram" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://tiktok.com/@imarixu" target="_blank" class="social-bubble tiktok" title="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+        </a>
+        <a href="https://www.youtube.com/@ImArixu" target="_blank" class="social-bubble youtube" title="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
